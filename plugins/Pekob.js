@@ -1,4 +1,4 @@
-let fetch = require('node-fetch')
+ fetch = require('node-fetch')
 
 let handler = async (m, { conn, usedPrefix, command }) => {
 	let res = await fetch(API('https://hmtai.herokuapp.com', '/nsfw/' + command, {}))
@@ -6,23 +6,11 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 	let json = await res.json()
 	if (json.url) {
 		let buffer = await (await fetch(json.url)).buffer()
-		await conn.sendMessage(m.chat, {
-			contentText: 'Random Image',
-			footerText: command,
-			buttons: [
-				{ buttonId: usedPrefix + command, buttonText: { displayText: 'Get Again' }, type: 1 }
-			],
-			headerType: 'IMAGE',
-			imageMessage: (await conn.prepareMessageMedia(buffer, 'imageMessage', {})).imageMessage
-		}, 'buttonsMessage', { quoted: m })
-	} else throw json
+		await conn.sendFile(m.chat, url, 'json.url', `Sagne sama kartun ?`.trim(), m)
 }
+
 handler.help = ['ass', 'bdsm', 'blowjob', 'boobjob', 'cum', 'creampie', 'cuckold', 'ero', 'elves', 'femdom', 'foot', 'gangbang', 'glasses', 'hentai', 'incest', 'masturbation', 'pantsu', 'orgy', 'tentacles', 'thighs', 'uniform', 'vagina', 'yuri' ]
-handler.tags = ['nsfw']
+handler.tags = ['dewasa']
 handler.command = /^(ass|bdsm|blowjob|boobjob|cum|creampie|cuckold|ero|elves|femdom|foot|gangbang|glasses|hentai|incest|masturbation|pantsu|orgy|tentacles|thighs|uniform|vagina|yuri)$/i
-
-handler.premium = true
-handler.register = true
-handler.nsfw = true
-
 module.exports = handler
+
