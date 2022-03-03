@@ -13,6 +13,7 @@ let tags = {
   'absen': 'MENU ABSEN',
   'vote': 'MENU VOTE',
   'owner': 'MENU OWNER',
+  'wall': 'RANDOM WALLPAPER',
   'fun': 'MENU FUN',
   'sticker': 'MENU CONVERT',
   'maker': 'MENU MAKER',
@@ -21,7 +22,7 @@ let tags = {
   'kerang': 'MENU KERANG',
   'anime': 'MENU ANIME',
   'downloader': 'DOWNLOADER',
-  'nsfw': 'MENU NSFW',
+  'nsfw': 'MENU NSFW [PREMIUM]',
   'tools': 'MENU TOOLS',
   'advanced': 'ADVANCED',
   'quotes': 'MENU QUOTES',
@@ -47,8 +48,8 @@ const defaultMenu = {
 ┏━ꕥ
 ┃✾ Uptime: *%uptime (%muptime)*
 ┃✾ Database: %rtotalreg dari %totalreg
-┃✾ Youtube:
-┃✾ https://pastelink.net/v20Md
+┃✾ IG:
+┃✾ instagram.com/ahmdlui
 ┗━━━━━━ꕥ
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
@@ -164,39 +165,39 @@ let handler = async (m, { conn, usedPrefix: _p, command }) => {
          hydratedTemplate: {
            hydratedContentText: text.trim(),
            locationMessage: { 
-           jpegThumbnail: await (await fetch(`https://i.ibb.co/jfZVKmC/babi2.jpg`)).buffer() },
+           jpegThumbnail: await (await fetch(`https://telegra.ph/file/fe5fd8f202500aeb38536.jpg`)).buffer() },
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
-               displayText: 'source code',
-               url: `${ApiiKey}`
+               displayText: 'sc😱',
+               url: 'gkadascscan.com',
              }
 
            },
              {
              callButton: {
                displayText: '𝚙𝚑𝚘𝚗𝚎 𝚗𝚞𝚖𝚋𝚎𝚛',
-               PhoneNumber: '6288279268363'
+               PhoneNumber: '6282146092695',
              }
 
            },
                {
              quickReplyButton: {
-               displayText: '𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁',
+               displayText: 'Click Here!',
                id: '.owner',
              }
 
            },
                {
              quickReplyButton: {
-               displayText: '𝙶𝙴𝚃 𝙱𝙾𝚃',
-               id: '.donasi',
+               displayText: 'FREEBOT',
+               id: '.infobot',
              }
 
            },
                {
              quickReplyButton: {
-               displayText: 'YukiBot 𝚝𝚎𝚊𝚖',
+               displayText: 'Link gc',
                id: '.tqto',
              }
            }]
