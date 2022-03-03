@@ -1,16 +1,17 @@
 let fetch = require('node-fetch')
-let handler = async (m, { conn }) => {
-  let res = await fetch('https://api.waifu.pics/nsfw/neko')
-  if (!res.ok) throw 'Error Website sedang down'
-  let json = await res.json()
-  if (!json.url) throw 'Error!'
-  conn.sendFile(m.chat, json.url, '', 'sange kok ama kucing', m, 0, { thumbnail: Buffer.alloc(0) })
-}
-handler.help = ['nekonsfw']
-handler.tags = ['nsfw']
-handler.command = /^(nekonsfw)$/i
+let handler = async (m, { conn, command, usedPrefix }) => {
+	
+	conn.sendButtonImg(m.chat, await ( await fetch(`https://restapi-production-a62b.up.railway.app/api/nsfw/neko2?apikey=APIKEY`)).buffer(), 'Afah antum birahi sama Kartun ?', footer, 'Get Dosa Again', `.nsfwnekov2`, m)
 
-handler.limit = true
+}
+
+handler.help = ['nsfwneko']
+handler.tags = ['nsfw']
+handler.command = /^(nsfwneko)$/i
+handler.register = true
+
+handler.premium = true
+handler.register = true
 handler.nsfw = true
 
 module.exports = handler
