@@ -21,7 +21,7 @@ let listOwner = new Array()
           let buttons = [
   {buttonId: '#donasi', buttonText: {displayText: 'Minta Uangnya Om'}, type: 1},
   {buttonId: '#menu', buttonText: {displayText: 'BACK '}, type: 1},
-  {buttonId: '#sc', buttonText: {displayText: 'SC 😱😱'}, type: 1},  
+  {buttonId: '#sc', buttonText: {displayText: 'SC'}, type: 1},  
   
 ]
 const buttonsMessage = {
@@ -33,7 +33,7 @@ Hai Kak @${m.sender.replace(/@.+/, '')} 👋\nNih Kak Kontak Owner Saya Kalo Mau
 }
 conn.sendMessage(m.chat, buttonsMessage, 'buttonsMessage', { contextInfo: { mentionedJid: [m.sender]}})
 }
-handler.help = ['owner', 'creator']
+handler.help = ['owner']
 handler.tags = ['info']
 
 handler.command = /^(owner|creator)$/i
