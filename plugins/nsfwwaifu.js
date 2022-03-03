@@ -10,7 +10,8 @@ handler.help = ['waifunsfw']
 handler.tags = ['nsfw']
 handler.command = /^(waifunsfw)$/i
 
-handler.limit = true
+handler.premium = true
+handler.register = true
 handler.nsfw = true
 
 module.exports = handler
