@@ -38,21 +38,21 @@ bearkey = 'https://pastelink.net/v20Md'
 ApiiKey = 'https://pastelink.net/v20Md'
 vinkey = 'vinko'
 
-namabot = 'Yuki Bot'
-namalu = 'King Of Bear'
-footer = '\n©King Of Bear'
-kasihcaption = `Nih Sayang`
+namabot = 'Bot-Md'
+namalu = 'AhmdLui'
+footer = '\n©Bot-Md'
+kasihcaption = `Follow ig @AhmdLui`
 
 // Sticker WM
 global.stiker_wait = '_*Tunggu Sebentar...*_'
-global.packname = 'YukiBot Multi device'
-global.author = 'King Of Bear'
-global.email = 'drakipul1016@gmail.com'
+global.packname = 'Bot-Md'
+global.author = 'By Lui'
+global.email = 'oagibanh@gmail.com'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=runner-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
-global.wm = '©King Of Bear Bot-Md'
-global.media = 'https://telegra.ph/file/5d45a3d1e12726d98c5e4.jpg'
+global.wm = '©Bot-Md'
+global.media = 'https://telegra.ph/file/9e7c12f1c453608c2cf3a.jpg'
 
-global.wait = '_*Tunggu Sebentar Sedang Di Proses...*_'
+global.wait = '_*Follow ig saya yh*_'
 global.eror = '_*Server Error*_'
 
 global.multiplier = 69 // The higher, The harder levelup
