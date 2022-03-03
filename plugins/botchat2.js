@@ -23,7 +23,7 @@ var seconds = Math.floor(seconds % 60);
 return `${pad(hours)}Jam ${pad(minutes)}Menit ${pad(seconds)}Detik`
 }
 runtime = process.uptime()
-					teks = `𝑲𝒊𝒏𝒈 𝑶𝒇 𝑩𝒆𝒂𝒓 𝑶𝒇𝒇𝒊𝒄𝒊𝒂𝒍`// \n\n${kyun(runtime)}`
+					teks = `Hello!!`// \n\n${kyun(runtime)}`
 					run = `${kyun(runtime)}`
 					var itsme = `0@s.whatsapp.net`
 					var split = `teks`
@@ -44,7 +44,7 @@ runtime = process.uptime()
                         }
                       }
 					//m.reply(teks)
-					let jawab = `Hai Sayangku ${pushname2} ${ucapan()}\nSaya ${namabot} ada yang bisa saya bantu?`.trim()
+					let jawab = `Hai Beban ${pushname2} ${ucapan()}\nSaya ${namabot} ada yang bisa saya bantu?`.trim()
 conn.reply(m.chat, jawab, footer, {quoted: ftrol})
 }
 handler.customPrefix = /^(P|p|Hallo|halo|Halo|hallo|hi|helo|hai|hi|Hai|Helo|Hello|oy)$/i
