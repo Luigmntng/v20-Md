@@ -1,20 +1,19 @@
-var {WAMessageProto} = require('@adiwajshing/baileys')
-let fs = require ('fs')
-let fetch = require('node-fetch')
-let handler = async (m, { conn, command, text, usedPrefix }) => {
-  let user = global.DATABASE.data.users[m.sender]
-  user.afk = + new Date
-  user.afkReason = text
-  let str = `
-» User Name : ${conn.getName(m.sender)}
-» Alasan : ${text ? '' + text : 'No Text'}
+const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
+let handler = async(m, { text }) => {
+    let user = global.db.data.users[m.sender]
+    user.afk = +new Date
+    user.afkReason = text
+    let str(`
+         Mode Afk
+Name : ${conn.getName(m.sender)} 
+Alasan : ${text ? ': ' + text : ''}
 `.trim()
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
     templateMessage: {
         hydratedTemplate: {
           hydratedContentText: str,
           locationMessage: { 
-          jpegThumbnail: fs.readFileSync('./src/img1.png') },           
+          jpegThumbnail: jpegThumbnail: await (await fetch(`https://telegra.ph/file/9e7c12f1c453608c2cf3a.jpg`)).buffer() },         
           hydratedFooterText: wm,
           hydratedButtons: [{
             urlButton: {
@@ -40,16 +39,8 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
         { messageId: template.key.id }
     )
 }
-
-handler.help = ['afk <alasan>']
-handler.tags = ['group']
+handler.help = ['afk [alasan]']
+handler.tags = ['main']
 handler.command = /^afk$/i
 
 module.exports = handler
-
-function clockString(ms) {
-  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
-}
