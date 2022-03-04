@@ -8,7 +8,7 @@ let handler = async (m, { conn, command }) => {
 _*${json.judul}*_
 _${json.desc}_
 `.trim()
-await conn.sendReply(m.chat, json.thumb, 'hantu.jpg', caption, m)
+await conn.sendFile(m.chat, json.thumb, 'hantu.jpg', caption, m)
 }
 handler.help = ['ceritahoror', 'ceritahrorr']
 handler.tags = ['internet', 'fun', 'quotes']
