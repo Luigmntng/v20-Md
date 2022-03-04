@@ -44,7 +44,7 @@ let handler  = async (m, { conn, usedPrefix }) => {
 ╠═ Slamet Chan
 ╠═ Elaine Chan
 ╠═〘 Bot-Md 〙 ═`.trim()
-     await conn.sendFile(m.chat, await(await fetch(image)).buffer(), caption, m)
+     await conn.sendReply(m.chat, caption, m)
 }
 handler.help = ['infobot']
 handler.tags = ['info']
