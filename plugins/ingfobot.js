@@ -11,7 +11,7 @@ let handler  = async (m, { conn, usedPrefix }) => {
   let old = Math.round(performance.now())
   await m.reply('wait Kakak!!')
   let neww = Math.round(performance.now())
-  let str = `
+  let caption = `
 ╠═〘 ${package.name} 〙 ═
 ╠➥ *Versi* : -
 ╠➥ *Homepage* : -
@@ -44,7 +44,7 @@ let handler  = async (m, { conn, usedPrefix }) => {
 ╠═ Slamet Chan
 ╠═ Elaine Chan
 ╠═〘 Bot-Md 〙 ═`.trim()
-     await conn.sendFile(m.chat, await(await fetch(image)).buffer(), str, m)
+     await conn.sendFile(m.chat, await(await fetch(image)).buffer(), caption, m)
 }
 handler.help = ['infobot']
 handler.tags = ['info']
