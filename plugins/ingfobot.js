@@ -43,8 +43,9 @@ let handler  = async (m, { conn, usedPrefix }) => {
 ╠═ Api xsteam :St4r
 ╠═ Slamet Chan
 ╠═ Elaine Chan
-╠═〘 Bot-Md 〙 ═`.trim()
-     await conn.sendReply(m.chat, caption, m)
+╠═〘 Bot-Md 〙 ═
+`.trim()
+     await m.reply(caption)
 }
 handler.help = ['infobot']
 handler.tags = ['info']
