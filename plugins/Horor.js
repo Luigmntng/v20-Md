@@ -4,9 +4,12 @@ let handler = async (m, { conn, command }) => {
   if (res.status != 200) throw await res.text()
   let json = await res.json()
   if (!json.status) throw json
-await conn.sendFile(m.chat, await (await fetch(json.thumb)).buffer(), '', '_*${json.judul}*_\n\n_${json.desc}_', m)
-
- }
+  let caption = `
+_*${json.judul}*_
+_${json.desc}_
+`.trim()
+await conn.sendReply(m.chat, json.thumb, 'hantu.jpg', caption, m)
+}
 handler.help = ['ceritahoror', 'ceritahrorr']
 handler.tags = ['internet', 'fun', 'quotes']
 handler.command = /^ceritahoror|ceritahorror$/i
