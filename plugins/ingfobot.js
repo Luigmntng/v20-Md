@@ -41,10 +41,10 @@ let handler  = async (m, { conn, usedPrefix }) => {
 ╠═ Scrip original by ShiraoriBot-Md
 ╠═ Creator : AhmdLui
 ╠═ Api xsteam :St4r
-╠═ Resta
-╠═ Ariq
-╠═〘 AhmdLui 〙 ═`.trim()
-     await conn.send2ButtonLoc(m.chat, await(await fetch(image)).buffer(), str, '©Bot-Md', footer, 'Owner', '.owner', 'Menu', '.menu', m)
+╠═ Slamet Chan
+╠═ Elaine Chan
+╠═〘 Bot-Md 〙 ═`.trim()
+     await conn.sendFile(m.chat, await(await fetch(image)).buffer(), str, m)
 }
 handler.help = ['infobot']
 handler.tags = ['info']
