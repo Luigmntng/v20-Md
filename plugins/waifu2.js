@@ -16,7 +16,7 @@ Jgn Lupa Follow ig @ahmdlui
 }
 
 handler.help = ['waifu2']
-handler.tags = ['internet']
+handler.tags = ['anime']
 handler.command = /^waifu2$/i
 
 handler.fail = null
