@@ -4,10 +4,11 @@ let handler = async (m, { conn, command }) => {
   if (res.status != 200) throw await res.text()
   let json = await res.json()
   if (!json.status) throw json
-let { judul, desc, thumb } = json.results[0]
-let demit = `*Judul:* ${judul}
-*Deskripsi:* ${desc}`
-  conn.sendFile(m.chat, thumb, '', demit, m)
+  let caption = `
+_*${json.judul}*_
+_${json.desc}_
+`.trim()
+await conn.sendReply(m.chat, await (await fetch(json.thumb)).buffer(), caption, m)
 }
 handler.help = ['ceritahoror', 'ceritahrorr']
 handler.tags = ['internet', 'fun', 'quotes']
