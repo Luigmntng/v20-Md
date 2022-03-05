@@ -2,13 +2,9 @@ let fetch = require('node-fetch')
 let handler = async (m, { conn }) => {
   await m.reply(global.wait)
   let res = await fetch(`https://islamic-api-indonesia.herokuapp.com/api/data/json/ayatkursi`)
-  json = await res.json()
-  let {
-    tafsir,
-    latin,
-    arabic,
-    translation
-  } = json.result.data
+  if (res.status != 200) throw await res.text()
+  let json = await res.json()
+  if (!json.status) throw json
   let caption = `
 *「 Ayat Kursi 」*
 ${arabic}
@@ -16,8 +12,7 @@ ${latin}
 Artinya:
 _"${translation}"_
 `.trim()
-  m.reply(caption)
-  await m.reply(`Tafsir:\n\n${tafsir}`)
+  await m.reply(caption)
 }
 handler.help = ['ayatkursi']
 handler.tags = ['quran']
