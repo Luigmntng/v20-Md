@@ -3,10 +3,10 @@ let handler = async(m, { conn, text }) => {
 
     if (!text) return conn.reply(m.chat, 'Masukan Nama Nabi nya', m)
 
-	axios.get(`https://videfikri.com/api/religi/kisahnabi/?nabi=${text}`).then ((res) => {
-	 	let hasil = `*NAMA NABI*			: ${text}\n*TEMPAT LAHIR*		: ${res.data.result.tempat_lahir}\n*TAHUN KELAHIRAN*	: ${res.data.result.tahun_kelahiran}\n*UMUR*				: ${res.data.result.usia}\n*KISAH*				: ${res.data.result.description}`
+	axios.get(`https://restapi-production-a62b.up.railway.app/api/muslim/kisahnabi?nabi=${text}&apikey=APIKEY`).then ((res) => {
+	 	let result = `*NAMA NABI*			: ${name}\n\n*TAHUN KELAHIRAN*	: ${res.data.result.kelahiran}\n\n*UMUR*				: ${res.data.result.wafat_usia}\n\n*SINGGAH*         :${res.data.singgah}\n\n*KISAH*				: ${res.data.result.kisah}`
 
-    conn.reply(m.chat, hasil, m)
+    conn.reply(m.chat, result, m)
 	})
 }
 handler.help = ['kisah|kisah nabi|nabi'].map(v => v + ' <nama nabi>')
@@ -26,3 +26,6 @@ handler.exp = 0
 handler.limit = false
 
 module.exports = handler
+
+
+
