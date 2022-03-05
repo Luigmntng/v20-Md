@@ -1,5 +1,4 @@
 let handler  = async (m, { conn, usedPrefix: _p }) => {
-	if (!db.data.chats[m.chat].nsfw && m.isGroup) throw global.nsfw
   conn.reply(m.chat, `
 	「 KODE NUKLIR 」
 
