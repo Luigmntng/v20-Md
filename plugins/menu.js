@@ -30,31 +30,18 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-┏━━━ꕥ〔 *${namabot}* 〕ꕥ━⬣
-┃✾ Hai, %name!
-┃
-┃✾ Tersisa *%limit Limit*
-┃✾ Role *%role*
-┃✾ Level *%level (%exp / %maxexp)* 
-┃✾ [%xp4levelup]
-┃✾ %totalexp XP secara Total
-┗━ꕥ
-┏━ꕥ 
-┃✾ Hari : *%week %weton* 
-┃✾ Tanggal : *%date*
-┃✾ Tanggal Islam : *%dateIslamic*
-┃✾ Jam : *%time Wib*
-┗━ꕥ
-┏━ꕥ
-┃✾ Uptime: *%uptime (%muptime)*
-┃✾ Database: %rtotalreg dari %totalreg
-┃✾ IG:
-┃✾ instagram.com/ahmdlui
-┗━━━━━━ꕥ
+   Hai Beban ! I am Bot-Md?!
+╭─❑ 「 Sekedar informasi 」 ❑
+┃-Jangan Spam Bot Vangh_-
+┃-Klo mau masukin bot ini ke gc
+┃ chat owner yh vangh 
+┃-kadang kadang reset database
+┃Udah itu aja sih
+┗━Ini List menu saya maaf dikit
 %readmore`.trimStart(),
-  header: '╭─「 %category 」',
-  body: '│ ⎙ %cmd %islimit %isPremium',
-  footer: '╰────\n',
+  header: '┏「 %category 」',
+  body: ' ❑ %cmd %islimit %isPremium',
+  footer: '┗ \n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
@@ -177,7 +164,7 @@ let handler = async (m, { conn, usedPrefix: _p, command }) => {
              {
              callButton: {
                displayText: '𝚙𝚑𝚘𝚗𝚎 𝚗𝚞𝚖𝚋𝚎𝚛',
-               PhoneNumber: '6282146092695',
+               PhoneNumber: '6288279268363',
              }
 
            },
@@ -215,9 +202,9 @@ let handler = async (m, { conn, usedPrefix: _p, command }) => {
     throw e
   }
 }
-handler.help = ['allmenu']
+handler.help = ['menu']
 handler.tags = ['main']
-handler.command = /^(allmenu)$/i
+handler.command = /^(menu)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
