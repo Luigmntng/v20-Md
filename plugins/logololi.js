@@ -1,5 +1,3 @@
-1 kata
-
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
    response = args.join(' ').split('|')
