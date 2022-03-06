@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 async function handler(m, {command}) {
 m.reply('_Loading..._')
-	conn.sendFile(m.chat, await ( await fetch(`https://restapi-production-a62b.up.railway.app/api/wallpaper/islami${command}?apikey=APIKEY`)).buffer(), '', 'Udah kak Jgn Lupa Follow ig @ahmdlui', m)
+	conn.sendFile(m.chat, await ( await fetch(`https://restapi-production-a62b.up.railway.app/api/wallpaper/${command}?apikey=APIKEY`)).buffer(), '', 'Udah kak Jgn Lupa Follow ig @ahmdlui', m)
 
 }
 
