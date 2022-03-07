@@ -9,6 +9,7 @@ global.APIs = { // API Prefix
   xteam: 'https://api.xteam.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
   lol: 'https://api.lolhuman.xyz',
+  lui: 'https://restapi-production-a62b.up.railway.app',
   dhnjing: 'https://dhnjing.xyz',
   zeks: 'https://api.zeks.me',
   pencarikode: 'https://pencarikode.xyz',
@@ -23,6 +24,7 @@ global.APIKeys = { // APIKey Here
   'https://api.xteam.xyz': 'https://pastelink.net/v20Md',
   'https://api.lolhuman.xyz': 'rey2k21',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
+  'https://restapi-production-a62b.up.railway.app': 'apirey',
   'https://api.zeks.me': 'apivinz',
   'https://pencarikode.xyz': 'pais',
   'https://apikey-bear3.herokuapp.com': 'https://pastelink.net/v20Md',
@@ -34,6 +36,7 @@ lolkey = 'rey2k21'
 zekskey = 'apivinz'
 xteamkey = 'https://pastelink.net/v20Md'
 leyskey = 'dappakntlll'
+luikey = 'apirey'
 bearkey = 'https://pastelink.net/v20Md'
 ApiiKey = 'https://pastelink.net/v20Md'
 vinkey = 'vinko'
