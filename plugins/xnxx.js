@@ -12,6 +12,6 @@ handler.help = ['xnxxsearch <query>']
 handler.tags = ['internet']
 handler.command = /^(xnxxsearch)$/i
 
-handler.limit = true
+handler.limit = 12
 
 module.exports = handler
