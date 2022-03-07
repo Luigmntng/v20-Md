@@ -18,9 +18,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         await delay(1500)
     }
 }
-handler.help = ['stiker <pencarian>']
+handler.help = ['stikersearch <pencarian>']
 handler.tags = ['sticker']
-handler.command = /^(stiker)$/i
+handler.command = /^(stikersearch)$/i
 
 handler.limit = true
 
