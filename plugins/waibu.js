@@ -5,9 +5,9 @@ m.reply('_Loading..._')
 
 }
 
-handler.help = ['chitoge', 'kaori', 'nezuko', 'tsunade', 'emilia', 'asuna', 'sagiri', 'miku', 'yotsuba', 'mikasa', 'shina', 'gremory', 'akira', 'toukachan']
+handler.help = ['chitoge', 'kaori', 'nezuko', 'tsunade', 'emilia', 'asuna', 'sagiri', 'miku', 'yotsuba', 'mikasa', 'shina', 'gremory', 'akira', 'toukachan' 'kagura', 'hinata', 'minato', 'naruto', 'onepiece', 'itori', 'sasuke', 'kurumi', 'anna', 'deidara', 'shinomiya', 'eba', 'yumeko', 'akiyama', 'yuki', 'itachi', 'madara', 'hestia', 'inori', 'sakura', 'keneki', 'shinka', 'chiho', 'kaga', 'rize', 'erza', 'ayuzawa', 'kotori', 'boruto']
 handler.tags = ['anime']
-handler.command = /^(chitoge|kaori|nezuko|tsunade|emilia|asuna|sagiri|miku|yotsuba|mikasa|shina|gremory|akira|toukachan)$/i
+handler.command = /^(chitoge|kaori|nezuko|tsunade|emilia|asuna|sagiri|miku|yotsuba|mikasa|shina|gremory|akira|toukachan|kagura|hinata|minato|naruto|onepiece|itori|sasuke|kurumi|anna|deidara|shinomiya|eba|yumeko|akiyama|yuki|itachi|madara|hestia|inori|sakura|keneki|shinka|chiho|kaga|rize|erza|ayuzawa|kotori|boruto)$/i
 handler.register = true
 
 handler.limit = true
