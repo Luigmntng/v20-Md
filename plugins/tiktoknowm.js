@@ -10,5 +10,5 @@ let handler = async(m, { conn, usedPrefix, text, command }) => {
 handler.help = ['tiktoknowm']
 handler.tags = ['downloader']
 handler.command = /^tiktoknowm$/i
-handler.limit = 50
+handler.limit = 8
 module.exports = handler
