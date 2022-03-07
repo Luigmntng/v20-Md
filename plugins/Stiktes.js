@@ -4,7 +4,7 @@ const { sticker } = require('../lib/sticker')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `*Perintah ini untuk mengambil stiker dari Website berdasarkan pencarian*\n\nContoh penggunaan:\n${usedPrefix + command} spongebob`
-    let res = await fetch(global.API('lui', '/api/download/sticker', { q: text }, 'APIKEY'))
+    let res = await fetch(global.API('lui', '/api/download/sticker', { q: text }, 'apirey'))
     if (res.status !== 200) throw await res.text()
     let json = await res.json()
     if (!json.status) throw json
