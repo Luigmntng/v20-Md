@@ -5,9 +5,9 @@ m.reply('_Loading..._')
 
 }
 
-handler.help = ['chitoge', 'kaori', 'nezuko', 'tsunade', 'emilia', 'asuna', 'sagiri', 'miku', 'yotsuba', 'mikasa', 'shina', 'gremory', 'akira', 'toukachan' 'kagura', 'hinata', 'minato', 'naruto', 'onepiece', 'itori', 'sasuke', 'kurumi', 'anna', 'deidara', 'shinomiya', 'eba', 'yumeko', 'akiyama', 'yuki', 'itachi']
+handler.help = ['chitoge', 'kaori', 'nezuko', 'tsunade', 'emilia', 'asuna', 'sagiri', 'miku', 'yotsuba', 'mikasa', 'shina', 'gremory', 'akira', 'toukachan']
 handler.tags = ['anime']
-handler.command = /^(chitoge|kaori|nezuko|tsunade|emilia|asuna|sagiri|miku|yotsuba|mikasa|shina|gremory|akira|toukachan|kagura|hinata|minato|naruto|onepiece|itori|sasuke|kurumi|anna|deidara|shinomiya|eba|yumeko|akiyama|yuki|itachi)$/i
+handler.command = /^(chitoge|kaori|nezuko|tsunade|emilia|asuna|sagiri|miku|yotsuba|mikasa|shina|gremory|akira|toukachan)$/i
 handler.register = true
 
 handler.limit = true
