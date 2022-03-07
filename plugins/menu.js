@@ -14,11 +14,13 @@ let tags = {
   'vote': 'MENU VOTE',
   'owner': 'MENU OWNER',
   'wall': 'RANDOM WALLPAPER',
+  'rndm': 'RANDOM IMAGE',
   'fun': 'MENU FUN',
   'sticker': 'MENU CONVERT',
   'maker': 'MENU MAKER',
   'github': 'MENU GITHUB',
   'internet': 'INTERNET',
+  'bokep': 'BOKEP SEARCH',
   'kerang': 'MENU KERANG',
   'anime': 'MENU ANIME',
   'downloader': 'DOWNLOADER',
@@ -156,8 +158,8 @@ let handler = async (m, { conn, usedPrefix: _p, command }) => {
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
-               displayText: 'sc😱',
-               url: 'gkadascscan.com',
+               displayText: 'CARA PREMIUM',
+               url: 'bayar1kdoang.com',
              }
 
            },
