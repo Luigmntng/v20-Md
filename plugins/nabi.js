@@ -1,18 +1,22 @@
 let fetch = require('node-fetch')
-let handler = async(m, { conn, text }) => {
-    let res = await fetch(global.API('lui', '/api/muslim/kisahnabi', { nabi: text }, 'apikey'))
-    if (!res.ok) throw await res.text()
-    let json = await res.json()
-    let nabi = json.result.map((v, i) => `*NAMA NABI:* ${v.name}\n*Kelahiran:* ${v.kelahiran}\n*Usia:* ${v.wafat_usia}\n*Singgah:* ${v.singgah}\n*Kisah:* ${v.kisah}`)
-    if (json.status) m.reply(nabi)
-    else throw json
+let handler = async (m, { conn, args }) => {
+  response = args.join (' ')
+  let res = await fetch('https://restapi-production-a62b.up.railway.app/api/muslim/kisahnabi?nabi=${response[0]}&apikey=APIKEY')
+  if (res.status != 200) throw await res.text()
+  let json = await res.json()
+  if (!json.status) throw json
+  let caption = `
+Nama nabi: ${json.name}
+Kelahiran: ${json.kelahiran}
+Usia: ${json.wafat_usia}
+Singgah: ${json.singgah}
+Kisah: _${json.kisah}_
+`.trim()
+await conn.sendReply(m.chat, caption, m)
 }
-handler.help = ['kisahnabi <nama nabi>']
-handler.tags = ['quran']
-handler.command = /^(kisahnabi)$/i
+handler.help = ['kisahnabi']
+handler.tags = ['alquran']
+handler.command = /^kisahnabi|nabi$/i
 
-handler.limit = true
 
 module.exports = handler
-
-
