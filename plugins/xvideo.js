@@ -11,6 +11,6 @@ handler.help = ['xvideosearch <judul>']
 handler.tags = ['bokep']
 handler.command = /^(xvideosearch)$/i
 
-handler.limit = true
+handler.limit = 12
 
 module.exports = handler
