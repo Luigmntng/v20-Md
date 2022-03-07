@@ -26,7 +26,7 @@ module.exports = {
                 if (typeof user !== 'object') global.db.data.users[m.sender] = {}
                 if (user) {
                     if (!isNumber(user.exp)) user.exp = 0
-                    if (!isNumber(user.limit)) user.limit = 10
+                    if (!isNumber(user.limit)) user.limit = 18
                     if (!isNumber(user.lastclaim)) user.lastclaim = 0
                     if (!('registered' in user)) user.registered = false
                     if (!user.registered) {
@@ -100,7 +100,7 @@ module.exports = {
                     if (!isNumber(user.warning)) user.warning = 0
                 } else global.db.data.users[m.sender] = {
                     exp: 0,
-                    limit: 10,
+                    limit: 18,
                     lastclaim: 0,
                     registered: false,
                     name: m.name,
