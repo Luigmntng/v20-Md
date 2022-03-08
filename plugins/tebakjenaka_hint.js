@@ -5,6 +5,6 @@ let handler = async (m, { conn }) => {
     let json = conn.tebakjenaka[id][1]
     m.reply('```' + json.jawaban.replace(/[bcdfghjklmnpqrstvwxyz]/g, '_') + '```')
 }
-handler.command = /^teki$/i
+handler.command = /^teja$/i
 handler.limit = true
 module.exports = handler
