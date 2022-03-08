@@ -17,7 +17,7 @@ Ketik ${usedPrefix}wa untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.tebakanime[id] = [
-        await conn.sendReply(m.chat, await (await fetch(json.image)).buffer(), 'wibu.jpg', caption, m),
+        await conn.sendReply(m.chat, json.image, 'wibu.jpg', caption, m),
         json, poin,
         setTimeout(async () => {
             if (conn.tebakanime[id]) await conn.sendReply(m.chat, `Waktu habis!\nJawabannya adalah *${json.name}*`, m)
