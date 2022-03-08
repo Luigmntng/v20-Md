@@ -6,7 +6,7 @@ let handler  = async (m, { conn, text }) => {
      let res = await fetch('https://restapi-production-a62b.up.railway.app/api/asupan?apikey=APIKEY')
      let img = await res.buffer()
      let caption = `
-Lu pedo yh ngab ?
+follow ig @ahmdlui >///<
 `.trim()
     conn.sendFile(m.chat, img, 'asupan.mp4', caption, m)
    } catch (e) {
