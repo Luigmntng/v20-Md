@@ -5,7 +5,7 @@ let handler = async(m, { conn, usedPrefix, text, command }) => {
     let res = await fetch(global.API('lui', '/api/download/tiktok', { url: text }, 'apikey'))
     if (!res.ok) throw await `${res.status} ${res.statusText}`
     let json = await res.json()
-    await conn.sendFile(m.chat, json.result.audio, 'tt.mp3', 'Jangan Lupa Follow Ig saya @ahmdlui', m)
+        conn.sendFile(m.chat, json.result.audio, 'error.mp3', '', m, 0, { asDocument: global.db.data.chats[m.chat].useDocument, mimetype: 'audio/mp4' })
 }
 handler.help = ['tiktokaudio']
 handler.tags = ['downloader']
