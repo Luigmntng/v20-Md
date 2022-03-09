@@ -17,10 +17,10 @@ Ketik ${usedPrefix}wa untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.tebakanime[id] = [
-        await conn.reply(m.chat, json.image, 'wibu.jpg', caption, m),
+         conn.reply(m.chat, json.image, 'wibu.jpg', caption, m),
         json, poin,
         setTimeout(async () => {
-            if (conn.tebakanime[id]) await conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.name}*`, m)
+            if (conn.tebakanime[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.name}*`, m)
             delete conn.tebakanime[id]
         }, timeout)
     ]
