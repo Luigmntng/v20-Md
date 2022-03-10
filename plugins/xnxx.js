@@ -9,7 +9,7 @@ let handler = async(m, { conn, args }) => {
     else throw json
 }
 handler.help = ['xnxxsearch <query>']
-handler.tags = ['internet']
+handler.tags = ['bokep']
 handler.command = /^(xnxxsearch)$/i
 
 handler.limit = 12
