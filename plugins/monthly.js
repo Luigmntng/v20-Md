@@ -11,9 +11,7 @@ let handler = async (m, { conn }) => {
         user.pet += 3
         user.lastmonthly = new Date * 1
     } else {
-        let buttons = button(`silahkan tunggu *馃晵${timers}* lagi untuk bisa mengclaim lagi`, user)
-        conn.sendMessage(m.chat, buttons, MessageType.buttonsMessage, { quoted: m })
-    }
+        conn.reply(m.chat, `silahkan tunggu *馃晵${timers}* lagi untuk bisa mengclaim lagi`, m)
 }
 handler.help = ['monthly']
 handler.tags = ['rpg']
