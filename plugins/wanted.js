@@ -14,7 +14,7 @@ let handler = async (m, { conn, text }) => {
    conn.sendFile(m.chat, wanted, '', 'Yoi work g sih ?', m)
    
  } catch (e) {
-   m.reply('Conversion Failed')
+   m.reply('Reply Fotonya! atau Eror dalam membuat :v')
   }
 }
 handler.help = ['wanted']
