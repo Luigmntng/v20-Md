@@ -5,7 +5,7 @@ let handler = async(m, { conn, text, usedPrefix }) => {
    if (!text) throw `Masukkan query!`
     await m.reply(global.wait)
   axios.get(`https://docs-jojo.herokuapp.com/api/samehadaku?q=${text}`)
-  i .then((res) => {
+    .then((res) => {
           let hasil = `*Judul:* ${res.data.result.title}\n\n*Link:* ${res.data.link}\n*Deskripsi:* ${res.data.desc}`
             conn.reply(m.chat, json.thumb, 'same.jpg', hasil, m)
         })
