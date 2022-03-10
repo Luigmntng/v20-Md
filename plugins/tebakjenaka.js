@@ -26,10 +26,10 @@ Ketik ${usedPrefix}teja untuk bantuan
 Bonus: ${poin} XP
 `.trim()`.trim()
     conn.tebakjenaka[id] = [
-        await conn.reply(m.chat, caption, m),
+        m.reply(m.chat, caption, m),
         json, poin,
         setTimeout(() => {
-            if (conn.tebakjenaka[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.tebakjenaka[id][0])
+            if (conn.tebakjenaka[id]) m.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.tebakjenaka[id][0])
             delete conn.tebakjenaka[id]
         }, timeout)
     ]
