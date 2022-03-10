@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
   response = args.join (' ')
-  let res = await fetch('https://restapi-production-a62b.up.railway.app/api/muslim/kisahnabi?nabi=${response[0]}&apikey=APIKEY')
+  let res = await fetch('https://restapi-production-a62b.up.railway.app/api/muslim/kisahnabi?nabi=${response}&apikey=APIKEY')
   if (res.status != 200) throw await res.text()
   let json = await res.json()
   if (!json.status) throw json
