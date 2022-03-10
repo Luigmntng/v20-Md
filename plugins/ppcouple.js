@@ -1,29 +1,16 @@
-let { Presence } = require('@adiwajshing/baileys')
-let fetch = require('node-fetch')
-let limit = 1
-let handler  = async (m, { conn, args, usedPrefix, command }) => {
-	await conn.updatePresence(m.chat, Presence.composing) 
-	let text = args.join` `
-	fetch('https://leyscoders-api.herokuapp.com/api/ppcouple?apikey=MIMINGANZ')
-    	.then(res => res.json())
-    	.then(json => {
-    		conn.updatePresence(m.chat, Presence.composing) 
-    		conn.reply(m.chat, `\`\`\`Tunggu sebentar . . .\`\`\``, m)
-			conn.sendFile(m.chat, json.result.male, 'male.jpg', 'ini cowoknya', m)	
-			conn.sendFile(m.chat, json.result.female, 'female.jpg', 'nih ceweknya',m)
-	}) .catch(() => { conn.reply(m.chat, `*Terjadi kesalahan . . .*`, m) })
+let fetch = require("node-fetch")
+
+let handler = async (m, { conn }) => {
+  let res = await fetch('https://leyscoders-api.herokuapp.com/api/ppcouple?apikey=MIMINGANZ)
+  if (!res.ok) throw await res.text()
+  let json = await res.json()
+  if (!json.status) throw json
+  await conn.sendFile(m.chat, json.result.male, '', 'Nih cwo nya jgn Lupa follow ig saya @ahmdlui', m)
+  await conn.sendFile(m.chat, json.result.female, '', 'Nih cwe nya jgn Lupa follow ig saya @ahmdlui', m)
 }
-handler.help = ['ppcouple']
-handler.tags = ['anime']
-handler.command = /^(ppcouple)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-handler.admin = false
-handler.botAdmin = false
-handler.fail = null
+handler.help = ['ppcouple', 'ppcp']
+handler.tags = ['internet', 'anime']
+handler.command = /^(pp(cp|couple))$/i
 handler.limit = true
-handler.exp = 15
+
 module.exports = handler
