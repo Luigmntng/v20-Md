@@ -1,13 +1,13 @@
-let fetch = require('node-fetch')
-let fs = require('fs')
-let handler = async(m, { conn, usedPrefix, text, command }) => {
-    let res = await fetch(`http://docs-jojo.herokuapp.com/api/katacinta`)
-    if (!res.ok) throw await `${res.status} ${res.statusText}`
-    let json = await res.json()
+let axios = require('axios')
+
+let handler = async (m, { conn, usedPrefix, command }) => {
+let res = await axios.get(API('http://docs-jojo.herokuapp.com', '/api/katacinta',))
+
+let json = res.data
     m.reply(m.chat, json.result, m)
 }
-handler.help = ['katacinta']
-handler.tags = ['quotes']
-handler.command = /^katacinta$/i
-handler.limit = true
+handler.help = ['husbu2']
+handler.tags = ['anime']
+handler.command = /^(husbu2)$/i
+
 module.exports = handler
