@@ -7,7 +7,7 @@ let handler = async (m, { conn, participants, command, text }) => {
     }
     let jawab = `
 *Pertanyaan:* ${command} ${text}?
-*Jawaban:* @${mem.id.split(/@.+/, '')}
+*Jawaban:* @${member.id.split(/@.+/, '')}
     `.trim()
     let saha = [who]
     let mentionedJid = saha.concat(m.mentionedJid)
