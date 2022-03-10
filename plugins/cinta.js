@@ -4,7 +4,7 @@ let handler = async(m, { conn, usedPrefix, text, command }) => {
     let res = await fetch(`http://docs-jojo.herokuapp.com/api/katacinta`)
     if (!res.ok) throw await `${res.status} ${res.statusText}`
     let json = await res.json()
-    await conn.sendFile(m.chat, json.result, m)
+    m.reply(m.chat, json.result, m)
 }
 handler.help = ['katacinta']
 handler.tags = ['quotes']
