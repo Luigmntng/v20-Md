@@ -11,7 +11,7 @@ let handler = async (m, { conn, text }) => {
   let img = await q.download()
   let url = await uploadImage(img)
   let wanted = `http://docs-jojo.herokuapp.com/api/skull-makeup?image_url=${url}`
-    conn.sendMessage(m.chat, wanted, '', 'Wajahnya ganti g sih ?', m)
+    conn.sendFile(m.chat, wanted, '', 'Wajahnya ganti g sih ?', m)
  } catch (e) {
    m.reply('Mungkin wajah tidak terdeteksi')
   }
