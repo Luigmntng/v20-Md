@@ -1,5 +1,4 @@
-let fetch = require('node-fetch')
-
+const fetch = require('node-fetch')
 let timeout = 120000
 let poin = 500
 let handler = async (m, { conn, usedPrefix }) => {
@@ -9,21 +8,19 @@ let handler = async (m, { conn, usedPrefix }) => {
         conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.asahotak[id][0])
         throw false
     }
-    let res = await fetch(global.API('xteam', '/game/asahotak', {}, 'APIKEY'))
-    if (res.status !== 200) throw await res.text()
-    let json = await res.json()
-    if (!json.status) throw json
+    let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/asahotak.json')).json()
+    let json = src[Math.floor(Math.random() * src.length)]
     let caption = `
-${json.result.soal}
+${json.soal}
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik ${usedPrefix}ao untuk bantuan
 Bonus: ${poin} XP
-`.trim()
+    `.trim()
     conn.asahotak[id] = [
-        await conn.reply(m.chat, caption, m),
+        m.reply(m.chat, caption, m),
         json, poin,
-        setTimeout(() => {
-            if (conn.asahotak[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.result.jawaban}*`, conn.asahotak[id][0])
+        setTimeout(async () => {
+            if (conn.asahotak[id]) m.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.asahotak[id][0])
             delete conn.asahotak[id]
         }, timeout)
     ]
