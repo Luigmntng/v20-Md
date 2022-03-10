@@ -4,7 +4,7 @@ let handler = async(m, { conn, text, usedPrefix }) => {
 
    if (!text) throw `Masukkan query!`
     await m.reply(global.wait)
-  let res = await fetch(global.API('http://docs-jojo.herokuapp.com', '/api/samehadaku', { q: text }))
+  axios.get(`https://docs-jojo.herokuapp.com/api/samehadaku?q=${text}`)
   i .then((res) => {
           let hasil = `*Judul:* ${res.data.result.title}\n\n*Link:* ${res.data.link}\n*Deskripsi:* ${res.data.desc}`
             conn.reply(m.chat, json.thumb, 'same.jpg', hasil, m)
@@ -25,5 +25,3 @@ handler.botAdmin = false
 
 
 module.exports = handler
-
-
