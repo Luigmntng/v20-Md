@@ -10,7 +10,7 @@ let handler = async (m, { conn }) => {
         user.legendary += 3
         user.lastweekly= new Date * 1
     } else {
-        conn.reply(m.chat `silahkan tunggu *🕒${timers}* lagi untuk bisa mengclaim`, m)
+        conn.reply(m.chat `silahkan tunggu *馃晵${timers}* lagi untuk bisa mengclaim`, m)
 }
 handler.help = ['weekly']
 handler.tags = ['rpg']
