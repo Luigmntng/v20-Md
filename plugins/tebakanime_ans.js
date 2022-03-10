@@ -8,10 +8,9 @@ handler.before = async function (m) {
     if (!(id in this.tebakanime)) return m.reply('Soal itu telah berakhir')
     if (m.quoted.id == this.tebakanime[id][0].id) {
         let json = JSON.parse(JSON.stringify(this.tebakanime[id][1]))
-        if (['.wa', 'Bantuan', ''].includes(m.text)) return !0
         if (m.text.toLowerCase() == json.name.toLowerCase().trim()) {
             global.db.data.users[m.sender].exp += this.tebakanime[id][2]
-            await this.sendReply(m.chat, `*Benar!* +${this.tebakanime[id][2]} XP`, m)
+            m.reply(m.chat, `*Benar!* +${this.tebakanime[id][2]} XP`, m)
             clearTimeout(this.tebakanime[id][3])
             delete this.tebakanime[id]
         } else if (similarity(m.text.toLowerCase(), json.name.toLowerCase().trim()) >= threshold) m.reply(`*Dikit Lagi!*`)
