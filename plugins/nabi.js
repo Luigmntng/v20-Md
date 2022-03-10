@@ -6,11 +6,11 @@ let handler = async (m, { conn, args }) => {
   let json = await res.json()
   if (!json.status) throw json
   let caption = `
-Nama nabi: ${json.name}
-Kelahiran: ${json.kelahiran}
-Usia: ${json.wafat_usia}
-Singgah: ${json.singgah}
-Kisah: _${json.kisah}_
+Nama nabi: ${json.result.name}
+Kelahiran: ${json.result.kelahiran}
+Usia: ${json.result.wafat_usia}
+Singgah: ${json.result.singgah}
+Kisah: _${json.result.kisah}_
 `.trim()
 await conn.sendReply(m.chat, caption, m)
 }
