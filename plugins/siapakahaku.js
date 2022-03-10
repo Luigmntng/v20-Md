@@ -9,7 +9,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.siapakahaku[id][0])
         throw false
     }
-    let res = await fetch(global.API('bg', '/siapakahaku', {}))
+    let res = await fetch(global.API('https://raw.githubusercontent.com/BochilTeam/database/master/games/siapakahaku.json'', {}))
     if (res.status !== 200) throw await res.text()
     let json = await res.json()
     if (json.status !== true) throw json
