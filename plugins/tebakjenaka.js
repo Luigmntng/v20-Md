@@ -39,7 +39,3 @@ handler.tags = ['game']
 handler.command = /^tebakjenaka/i
 
 module.exports = handler
-
-
-
-https://restapi-production-a62b.up.railway.app/api/game/tebakjenaka?apikey=APIKEY
