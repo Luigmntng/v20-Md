@@ -1,7 +1,7 @@
 let { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn }) => {
-    let user = global.DATABASE._data.users[m.sender]
+    let user = global.db.data.users[m.sender]
     let _timers = (604800000 - (new Date - user.lastweekly))
     let timers = clockString(_timers) 
     if (new Date - user.lastweekly > 604800000) {
@@ -10,9 +10,7 @@ let handler = async (m, { conn }) => {
         user.legendary += 3
         user.lastweekly= new Date * 1
     } else {
-        let buttons = button(`silahkan tunggu *🕒${timers}* lagi untuk bisa mengclaim lagi`, user)
-        conn.sendMessage(m.chat, buttons, MessageType.buttonsMessage, { quoted: m })
-    }
+        conn.reply(m.chat `silahkan tunggu *🕒${timers}* lagi untuk bisa mengclaim`, m)
 }
 handler.help = ['weekly']
 handler.tags = ['rpg']
