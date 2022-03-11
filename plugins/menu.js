@@ -14,7 +14,7 @@ let tags = {
   'vote': 'MENU VOTE',
   'owner': 'MENU OWNER',
   'wall': 'RANDOM WALLPAPER',
-  'rndm': 'RANDOM IMAGE',
+  'random': 'RANDOM IMAGE',
   'fun': 'MENU FUN',
   'sticker': 'MENU CONVERT',
   'maker': 'MENU MAKER',
@@ -32,18 +32,17 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-   Hai Beban ! I am Bot-Md?!
-╭─❑ 「 Sekedar informasi 」 ❑
-┃-Jangan Spam Bot Vangh_-
-┃-Klo mau masukin bot ini ke gc
-┃ chat owner yh vangh 
-┃-kadang kadang reset database
-┃Udah itu aja sih
-┗━Ini List menu saya maaf dikit
+┏━━━━━━━━━━━━━━┓
+┣ *FREE BOT*
+┣━━ *MODE ON*
+┣━━━ *MADE BY LUI*
+┗━━━━━━━━━━━━━━┛
+╔HERE THIS MY MENU╗
+
 %readmore`.trimStart(),
-  header: '┏「 %category 」',
-  body: ' ❑ %cmd %islimit %isPremium',
-  footer: '┗ \n',
+  header: '┏ 「 %category 」 ┓',
+  body: '  ❑ %cmd %islimit %isPremium',
+  footer: '┗                 ┛ \n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
