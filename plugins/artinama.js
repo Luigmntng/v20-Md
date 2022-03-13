@@ -4,7 +4,7 @@ let handler = async (m, { text }) => {
   let res = await fetch(global.API('lui',  '/api/primbon/artinama', { text: text }, 'apikey'))
   let json = await res.json()
   if (json.status !== true) throw json
-  conn.reply(m.chat, json.result, m)
+  conn.reply(m.chat, json.result.trim(), m)
 }
 handler.help = ['artinama'].map(v => v + ' [nama]')
 handler.tags = ['kerang']
