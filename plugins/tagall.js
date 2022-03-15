@@ -1,5 +1,5 @@
 let handler = async(m, { conn, text, participants }) => {
-  let teks = `══✪〘 *👥 Mention All* 〙✪══\n\n➲ *Message : ${text ? text : 'Nothing'}*\n\n`
+  let teks = ` *Message : ${text ? text : 'Nothing'}%readmore\n`
 		      	for (let mem of participants) {
 		            teks += `࿃➡️ @${mem.id.split('@')[0]}\n`
 				}
