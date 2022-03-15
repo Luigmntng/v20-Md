@@ -3,8 +3,8 @@ let handler = async(m, { conn }) => {
   let res = await fetch('https://docs-jojoapi.herokuapp.com/api/asupan/ukty?apikey=Syaa')
   if (!res.ok) throw await res.text()
   let json = await res.json()
-  if (!json.url) throw 'Error!'
-  conn.sendFile(m.chat, json.url, '', 'Istri kartun', m)
+  if (!json.result.url) throw 'Error!'
+  conn.sendFile(m.chat, json.result.url, '', 'Istri kartun', m)
 }
 handler.help = ['ukhty']
 handler.tags = ['asupan']
