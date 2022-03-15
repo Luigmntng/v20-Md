@@ -15,6 +15,7 @@ let tags = {
   'owner': 'MENU OWNER',
   'wall': 'RANDOM WALLPAPER',
   'random': 'RANDOM IMAGE',
+  'asupan': 'ASUPANNYA GAN',
   'fun': 'MENU FUN',
   'sticker': 'MENU CONVERT',
   'maker': 'MENU MAKER',
@@ -40,9 +41,9 @@ const defaultMenu = {
 ╔HERE THIS MY MENU╗
 
 %readmore`.trimStart(),
-  header: '┏ 「 %category 」 ┓',
+  header: '┏ 「 %category 」          ┓',
   body: '  ❑ %cmd %islimit %isPremium',
-  footer: '┗                 ┛ \n',
+  footer: '┗                          ┛ \n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
