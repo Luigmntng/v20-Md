@@ -5,8 +5,8 @@ let handler = async(m, { conn, usedPrefix, text, command }) => {
     let res = await fetch(global.API('hari', '/api/download/instadl', { url: text }, 'apikey'))
     if (!res.ok) throw await res.text()
     let json = await res.json()
-    if (!json.url) throw 'Error!'
-    await conn.sendFile(m.chat, json.url, '', 'Jangan Lupa Follow Ig saya @ahmdlui', m)
+    if (!json.medias.url) throw 'Error!'
+    await conn.sendFile(m.chat, json.medias.url, '', ' Follow Ig saya Yh @ahmdlui', m)
 }
 handler.help = ['ig <link>']
 handler.tags = ['downloader']
