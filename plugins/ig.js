@@ -3,7 +3,7 @@ let fs = require('fs')
 let handler = async(m, { conn, usedPrefix, text, command }) => {
     if (!text) throw `Harap masukkan URL sebagai konten\n\nContoh: ${usedPrefix + command} https://www.instagram.com/reel/CaivjKDsNhe/?utm_medium=copy_link`
     let res = await fetch(global.API('hari', '/api/download/instadl', { url: text }, 'apikey'))
-    if (!res.ok) throw await `${res.status} ${res.statusText}`
+    if (!res.ok) throw await res.text()
     let json = await res.json()
     if (!json.url) throw 'Error!'
     await conn.sendFile(m.chat, json.url, '', 'Jangan Lupa Follow Ig saya @ahmdlui', m)
